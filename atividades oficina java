@@ -1,0 +1,76 @@
+Primeira atividade
+
+
+
+public class Projeto {
+public static void main(String[] args) {
+    String product1 = "Computer";
+    String product2 = "Office desk";
+
+    int age = 30;
+    int code = 5290;
+    char gender = 'F';
+    double price1 = 2100.0;
+    double price2 = 650.0;
+    double measure = 53.234567;
+
+    System.out.println(product1 + " " + price1);
+}
+
+}
+
+
+
+Segunda atividade
+
+
+public class dever2 {
+    public static void main(String[] args) {
+        
+        double B = 6.0;
+        double b = 8.0;
+        double altura = 5.0;
+        double area;
+
+        area = ((B + b) * altura) / 2;
+        
+        System.out.println("A área do trapézio é " + area);
+
+    }
+}
+
+
+Terceira atividade
+
+
+
+import java.util.Scanner;
+
+public class dever3 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double horas;
+        double valorh;
+        double salario; 
+        double funcionarios;
+        
+        System.out.println("Quantos funcionarios tem:  ");
+        funcionarios = sc.nextDouble();
+
+        System.out.println("Quantas horas trabalhadas:  ");
+        horas = sc.nextDouble();
+       
+
+        System.out.println("Qual o valor recebido por hora trabalhadas:  ");
+        valorh = sc.nextDouble();
+
+        System.out.println("Qual o salario desses funcionarios:  ");
+        salario = sc.nextDouble();
+
+
+        salario = horas * valorh; 
+
+        System.out.printf("Resultado:  %.2f %.2f\n", funcionarios, salario);
+
+    }
+}
