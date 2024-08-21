@@ -1,0 +1,169 @@
+Atividade 1
+
+
+public class Atividade1 {
+public static void main(String[] args) {
+    String product1 = "Computador";
+    String product2 = "Mesa de escritorio";
+
+    int age = 30;
+    int code = 5290;
+    char gender = 'F';
+    double price1 = 2100.0;
+    double price2 = 650.0;
+    double measure = 53.234567;
+
+    System.out.println("Produtos:");
+    System.out.printf("O valor do %s é de: R$%.2f%n", product1, price1);
+    System.out.printf("O valor da %s é de: R$%.2f%n", product2, price2);
+    System.out.printf("O registro é: %d anos, código %d e genero %c%n", age, code, gender);
+    System.out.printf("A medida é de: %.8f%n", measure);
+    System.out.printf("O cercado é de: %.3f%n", measure);
+    System.out.printf("Ponto decimal dos EUA: %.3f%n", measure);
+}
+
+}
+
+
+
+Atividade 2
+
+
+public class Atividade2 {
+    public static void main(String[] args) {
+
+        double B = 6.0;
+        double b = 8.0;
+        double altura = 5.0;
+        double area;
+
+        area = ((B + b) * altura) / 2;
+
+        System.out.println("A área do trapézio é " + area);
+
+    }
+}
+
+
+
+Atividade 3
+
+
+import java.util.Scanner;
+
+public class Atividade3 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double horas;
+        double valorh;
+        double salario; 
+        double funcionarios;
+
+        System.out.println("Quantos funcionarios tem:  ");
+        funcionarios = sc.nextDouble();
+
+        System.out.println("Quantas horas trabalhadas:  ");
+        horas = sc.nextDouble();
+
+
+        System.out.println("Qual o valor recebido por hora trabalhadas:  ");
+        valorh = sc.nextDouble();
+
+        System.out.println("Qual o salario desses funcionarios:  ");
+        salario = sc.nextDouble();
+
+
+        salario = horas * valorh; 
+
+        System.out.printf("Resultado: O numero de funcionarios é de: %.1f e o salario deles é de: %.2f\n", funcionarios, salario);
+
+    }
+}
+
+
+
+Atividade 4
+
+
+import java.util.Scanner;
+
+public class Atividade4 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        
+        double A;
+        double B;
+        double C;
+
+        
+        System.out.println("Digite um valor para A: ");
+        A = sc.nextDouble();
+
+        System.out.println("Digite um valor para B: ");
+        B = sc.nextDouble();
+
+        System.out.println("Digite um valor para C: ");
+        C = sc.nextDouble();
+
+        
+        double areaTriangulo = (A * C) / 2.0;
+        double areaCirculo = 3.14159 * C * C;
+        double areaTrapezio = ((A + B) * C) / 2.0;
+        double areaQuadrado = B * B;
+        double areaRetangulo = A * B;
+
+      
+        System.out.printf("Triangulo: %.3f%n", areaTriangulo);
+        System.out.printf("Circulo: %.3f%n", areaCirculo);
+        System.out.printf("Trapezio: %.3f%n", areaTrapezio);
+        System.out.printf("Quadrado: %.3f%n", areaQuadrado);
+        System.out.printf("Retangulo: %.3f%n", areaRetangulo);
+
+        // Fechamento do scanner
+        sc.close();
+    }
+}
+
+
+
+
+Atividade 5
+
+import java.util.Scanner;
+
+public class Atividade5 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int A;
+        int B;
+        int C; 
+        int D; 
+        int diferenca;
+        
+        
+        System.out.println("Digite o valor de A:  ");
+        A = sc.nextInt();
+        
+        System.out.println("Digite o valor de B:  ");
+        B = sc.nextInt();
+        
+        System.out.println("Digite o valor de C:  ");
+        C = sc.nextInt();
+        
+        System.out.println("Digite o valor de D:  ");
+        D = sc.nextInt();
+        
+        
+        diferenca = (A * B) - (C * D);
+        
+        System.out.printf("A diferenca é = " + diferenca);
+        
+    }
+}
+
+
+
+
+
