@@ -1,0 +1,114 @@
+Atividade 6
+
+import java.util.Scanner;
+
+public class atividade6 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        
+        int x;
+
+        System.out.printf("Digite o valor de x:  ");
+        x = sc.nextInt();
+
+        if (x < 2) {
+            System.out.printf("O numero é menor que 2");
+        } else if (x > 2) {
+            System.out.printf("O numero é maior que 2");
+        } else if (x == 2) {
+            System.out.printf("O numero é igual a 2");
+        } 
+
+    }
+    
+}
+
+Atividade 7
+
+import java.util.Scanner;
+
+public class atividade7 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        double nota;
+
+        System.out.println("Digite sua nota: ");
+        nota = sc.nextDouble();
+
+        if (nota >= 9.0) {
+            System.out.printf("Excelente\n");
+        } else if (nota >= 7.0) {
+            System.out.printf("Bom\n");
+        } else if (nota >= 5.0) {
+            System.out.printf("Regular\n");
+        } else if (nota >= 0.0) {
+            System.out.printf("Insuficiente\n");
+        } else {
+            System.out.println("Nota errada! A nota deve ser entre 0.0 e 10.0.");
+        }
+
+        System.out.printf("Sua nota é: %.2f\n", nota);
+        sc.close();
+    }
+}
+
+
+
+Atividade 8
+
+
+import java.util.Scanner;
+
+public class atividade8 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+
+        double operando1;
+        double operando2;
+        int Codp;
+        double resultado = 0;
+
+        System.out.printf("Digite o valor do primeiro operando:  ");
+        operando1 = sc.nextDouble();
+        System.out.printf("Digite o valor do segundo operando:  ");
+        operando2 = sc.nextDouble();
+
+        System.out.println("Selecione a operação que você deseja:  ");
+        System.out.println("1. Soma");
+        System.out.println("2. Subtração");
+        System.out.println("3. Divisão");
+        System.out.println("4. Multiplicação");
+        Codp = sc.nextInt();
+
+
+        switch (Codp) {
+            case 1:
+                resultado = operando1 + operando2;
+                System.out.println("Resultado da soma:  " + resultado);
+                break;
+
+            case 2:
+                resultado = operando1 - operando2;
+                System.out.println("Resultado da subtração:  " + resultado);
+                break;
+
+            case 3:
+                resultado = operando1 / operando2;
+                System.out.println("Resultado da divisão:  " + resultado);
+
+            case 4:
+                resultado = operando1 * operando2;
+                System.out.println("Resultado da multiplicação:  " + resultado);
+            default:
+            System.out.println("Operação errada!");
+            break;
+        }
+        
+    }
+}
+
+
+
+
