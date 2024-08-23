@@ -152,7 +152,141 @@ public class atividade5 {
 
 ///////////////////////////////////////////////////////////////////////
 
-Continua...
+Atividade 6
+
+import java.util.Scanner;
+
+public class atividade6 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        double novosalario;
+        double salario;
+
+        System.out.printf("Digite o seu salário:  ");
+        salario = sc.nextDouble();
+
+         novosalario = salario * 1.15;
+
+        System.out.printf("O seu salario com um aumento de 15%% é de:  %.2f%n", novosalario);
+        sc.close();
+
+
+
+
+    }
+}
+
+
+///////////////////////////////////////////////////////////////////////
+
+Atividade 7
+
+import java.util.Scanner;
+
+public class atividade7 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int numero;
+        int antecessor = 0;
+        int sucessor = 0;
+
+        System.out.printf("Digite um numero inteiro:  ");
+        numero = sc.nextInt();
+
+        antecessor = numero -1;
+        sucessor = numero +1;
+
+        System.out.printf("O sucessor de %d é: %d  \n", numero, sucessor);
+        System.out.printf("O antecessor de %d é: %d  \n", numero, antecessor);
+    }
+}
+
+
+///////////////////////////////////////////////////////////////////////
+
+Atividade 8
+
+import java.util.Scanner;
+
+public class atividade8 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        double diasT;
+        double valorD;
+        double salario;
+
+        System.out.printf("Digite quantos dias você trabalha:  ");
+        diasT = sc.nextDouble();
+        System.out.printf("Digite quanto você ganha por diaria:  ");
+        valorD = sc.nextDouble();
+
+        salario = diasT * valorD;
+
+        System.out.printf("O seu salario é de: %.2f%n", salario);
+        sc.close();
+
+
+
+    }
+}
+
+///////////////////////////////////////////////////////////////////////
+
+Atividade 9
+
+import java.util.Scanner;
+
+public class atividade9 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        double valorP;
+        double desconto;
+
+        System.out.printf("Digite o valor do produto:  ");
+        valorP = sc.nextDouble();
+
+        desconto = valorP * 0.90;
+
+        System.out.printf("O produto com desconto de 10%% é de: %.2f%n", desconto);
+        sc.close();
+
+    }
+}
+
+
+///////////////////////////////////////////////////////////////////////
+
+Atividade 10
+
+
+import java.util.Scanner;
+
+public class atividade10 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        double pesoKg;
+        double pesoLb;
+
+        System.out.printf("Digite o seu peso em (kg):  ");
+        pesoKg = sc.nextDouble();
+
+        pesoLb = pesoKg * 2.20462;
+
+        System.out.printf("O seu peso em (kg) para (libras) é de:  %.2f%n", pesoLb);
+        sc.close();
+
+    }
+}
+
+
+
+
+
 
 
 
