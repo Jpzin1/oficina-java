@@ -74,4 +74,291 @@ public class aitividade2s {
 
 Atividade 3
 
-continua....
+
+import java.util.Scanner;
+
+public class aitivdade3s {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int numero;
+
+        System.out.printf("Digite um numero (inteiro):  ");
+        numero =  sc.nextInt();
+
+        if (numero % 2 == 0) {
+            System.err.printf("O número é par!");
+        } else {
+            System.err.printf("O número é impar");
+        }
+        
+        sc.close();
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////
+
+Atividade 4
+
+
+import java.util.Scanner;
+
+public class atividade4s {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        double altura;
+        char sexo;
+        double IMC;
+        double peso;
+        double pesoIdeal = 0;
+
+        System.out.printf("Digite a sua altura (Metros):  ");
+        altura = sc.nextDouble();
+        System.out.printf("Digite o seu sexo (M ou F):  ");
+        sexo = sc.next().charAt(0);
+        System.out.printf("Digite o seu peso (Kg):  ");
+        peso = sc.nextDouble();
+
+        
+       if (sexo == 'M' || sexo == 'm') {
+        pesoIdeal = (72.7 * altura) - 58;
+       } else if (sexo == 'F' || sexo == 'f') {
+        pesoIdeal = (62.1 * altura) - 44.7;
+       } else {
+        System.out.printf("Sexo inválido.");
+        sc.close();
+       }
+
+       if (peso < pesoIdeal) {
+        System.out.printf("Você está abaixo do peso.");
+       } else if (peso == pesoIdeal) {
+        System.out.printf("Você está no peso ideal");
+       } else {
+        System.out.printf("Você está acima do peso.");
+       }
+
+       sc.close();
+
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////
+
+Atividade 5
+
+import java.util.Scanner;
+
+public class atividade5s {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int numero;
+
+        System.out.printf("Digite um número (inteiro):  ");
+        numero = sc.nextInt();
+
+        if (numero % 3 == 0 && numero % 5 == 0) {
+            System.out.printf("O número " + numero + " é multiplo de 3 e de 5 ao mesmo tempoo.");
+        } else {
+            System.out.printf("O número " + numero + " não é multiplo de 3 e de 5 ao mesmo tempo.");
+        }
+
+        sc.close();
+
+    }
+
+}
+
+
+/////////////////////////////////////////////////////////////////////////////
+
+Atividade 6 
+
+import java.util.Scanner;
+
+public class atividade6s {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int numero1 = 0;
+        int numero2 = 0;
+        int multiplicacao;
+        int soma;
+
+        System.out.printf("Digite o primeiro número (inteiro):  ");
+        numero1 = sc.nextInt();
+        System.out.printf("Digite o segundo número (inteiro):  ");
+        numero2 = sc.nextInt();
+
+        if (numero1 > 0 && numero2 > 0) {
+            multiplicacao = numero1 * numero2;
+            System.out.println("Ambos os números são positivos.\n");
+            System.out.println("Resultado da multiplicação:  \n" + multiplicacao);
+        } else {
+            soma = numero1 + numero2;
+            System.out.println("Pelo menos um dos números é negativo.\n");
+            System.out.println("Resultado da soma:  \n" + soma);
+        }
+
+        sc.close();
+    }
+}
+
+
+/////////////////////////////////////////////////////////////////////////////
+
+Atividade 7
+
+import java.util.Scanner;
+
+public class atividade7s {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        double salario;
+        double salarioN;
+
+        System.out.printf("Digite o seu salário:  ");
+        salario = sc.nextDouble();
+
+        if (salario < 1000) {
+            salarioN = salario + (salario * 0.10);
+        } else {
+            salarioN = salario + (salario * 0.05);
+        }
+
+        System.out.printf("Seu novo salário é de:  R$ %.2f", salarioN);
+        sc.close();
+    
+    }
+
+}
+
+/////////////////////////////////////////////////////////////////////////////
+
+Atividade 8
+
+
+import java.util.Scanner;
+
+public class atividade8s {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int numero;
+
+        System.out.printf("Digite um número entre (1 e 7):  ");
+        numero = sc.nextInt();
+
+        switch (numero) {
+            case 1:
+                System.out.println("Domingo");
+                break;
+            case 2:
+                System.out.println("Segunda-feira");
+                break;
+            case 3:
+                System.out.println("Terça-feira");
+                break;
+            case 4:
+                System.out.println("Quarta-feira");
+                break;
+            case 5:
+                System.out.println("Quinta-feira");
+                break;
+            case 6:
+                System.out.println("Sexta-feira");
+                break;
+            case 7:
+                System.out.println("Sábado");
+                break;
+            default:
+                System.out.println("Número inválido! Tente novamente.");
+                break;
+        }
+
+        sc.close();
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////
+
+Atividade 9
+
+import java.util.Scanner;
+
+public class atividade9s {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        double numero1;
+        double numero2;
+        double numero3;
+        double temp;
+
+        System.out.printf("Digite o primeio número:  ");
+        numero1 = sc.nextDouble();
+        System.out.printf("Digite o segundo número:  ");
+        numero2 = sc.nextDouble();
+        System.out.printf("Digite o terceiro número:  ");
+        numero3 = sc.nextDouble();
+
+        if (numero1 > numero2) {
+            temp = numero1;
+            numero1 = numero2;
+            numero2 = temp;
+        }
+
+        if (numero1 > numero3) {
+            temp = numero1;
+            numero1 = numero3;
+            numero3 = temp;
+        }
+
+        if (numero2 > numero3) {
+            temp = numero2;
+            numero2 = numero3;
+            numero3 = temp;
+        }
+
+        System.out.printf("Os números em ordem crescente são:  %.2f, %.2f e %.2f", numero1, numero2, numero3);
+        sc.close();
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////
+
+Atividade 10
+
+import java.util.Scanner;
+
+public class atividade10s {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int idade;
+
+        System.out.printf("Digite sua idade:  ");
+        idade = sc.nextInt();
+
+        if (idade <= 9) {
+            System.out.printf("Você é mirim!");
+        } else if (idade <= 13) {
+            System.out.printf("Você é infatil!");
+        } else if (idade <= 17) {
+            System.out.printf("Você é juvenil!");
+        } else {
+            System.out.printf("Você é adulto!");
+        }
+
+        sc.close();
+    }
+}
+
+
+
+
+
+
+
