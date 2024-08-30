@@ -1,0 +1,209 @@
+Atividade 1
+
+import java.util.Scanner;
+
+public class atividadeA {
+    public static void main(String[] args) {
+       
+        int[] array = {50, 100, 350};
+        int soma = somarArray(array);
+
+        System.out.println("A soma dos valores do array é:  " + soma);
+
+    }
+
+    public static int somarArray(int[] arr) {
+        int soma = 0;
+        for (int i = 0; i < arr.length; i++) {
+            soma += arr[i];
+        }
+        
+        return soma;
+    }
+}
+
+///////////////////////////////////////////////////////////////////////
+
+Atividade 2
+
+import java.util.Arrays;
+
+public class atividadeA1 {
+    public static void main(String[] args) {
+
+        int[] array = {1, 2, 3, 4, 5};
+        int[] novoArray = removerElemento(array, 2);
+        
+        System.out.println("Array resultante: " + Arrays.toString(novoArray));
+    }
+
+    public static int[] removerElemento(int[] arr, int index) {
+        if (index < 0 || index >= arr.length) {
+            throw new IllegalArgumentException("Índice fora dos limites do array!");
+        }
+        
+        int[] novoArray = new int[arr.length - 1];
+        for (int i = 0, j = 0; i < arr.length; i++) {
+            if (i != index) {
+                novoArray[j++] = arr[i];
+            }
+        }
+        
+        return novoArray;
+    }
+}
+
+///////////////////////////////////////////////////////////////////////
+
+Atividade 3
+
+public class atividadeA2 {
+    public static void main(String[] args) {
+        
+        float[] array = {1.5f, 10.5f, 5.7f, 20.2f};
+        float produto = calcularProduto(array);
+
+        System.out.println("O produto dos valores do array é de:  " + produto);
+    }
+
+    public static float calcularProduto(float[] arr) {
+        float produto = 1.0f;
+        for (float valor : arr) {
+            produto *= valor;
+        }
+
+        return produto;
+    }
+}
+
+///////////////////////////////////////////////////////////////////////
+
+Atividade 4
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class atividadeA3 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+
+        System.out.println("Digite o tamanho da array:  ");
+        int tamanho = sc.nextInt();
+
+        int[] array = new int[tamanho];
+
+        System.out.println("Informe os valores dos elementos dentro da array:");
+
+        for (int i = 0; i < tamanho; i++) {
+            System.out.println("Elemento " + (i + 1) + ": ");
+            array[i] = sc.nextInt();
+        }
+
+        int soma = calcularSoma(array);
+
+        System.out.println("Array:  " + Arrays.toString(array));
+        System.out.println("Soma dos valores:  " + soma);
+
+        sc.close();
+
+    }
+
+    public static int calcularSoma(int[] arr) {
+        int soma = 0;
+        
+        for (int valor : arr) {
+            soma += valor;
+        }
+        
+        return soma;
+        
+    }
+}
+
+
+///////////////////////////////////////////////////////////////////////
+
+Atividade 5
+
+import java.util.Scanner;
+
+public class atividadeA4 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int linhas = 3;
+        int colunas = 2;
+
+        int[][] matriz = new int[linhas][colunas];
+        
+        System.out.println("Informe os valores da matriz " + linhas + "x" + colunas + ":");
+
+        for (int i = 0; i < linhas; i++) {
+            for (int j = 0; j < colunas; j++) {
+                System.out.println("Elemento [" + i + "][" + j + "]:  ");
+                matriz[i][j] = sc.nextInt();
+            }
+        }
+
+        System.out.println("Matriz resultante:");
+        
+        for (int i = 0; i < linhas; i++) {
+            for (int j = 0; j < colunas; j++) {
+                System.out.println(matriz[i][j] + " ");
+            }
+            
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}
+
+///////////////////////////////////////////////////////////////////////
+
+Atividade 6
+
+
+import java.util.Scanner;
+
+public class AtividadeA5 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int[] array = new int[10];
+
+        System.out.println("Informe 10 valores para o array:");
+
+    
+        for (int i = 0; i < array.length; i++) {
+            System.out.print("Elemento " + (i + 1) + ": ");
+            array[i] = sc.nextInt();
+        }
+
+        System.out.print("Informe o valor a ser buscado: ");
+        int valorBuscado = sc.nextInt();
+
+        boolean encontrado = false;
+
+    
+        for (int valor : array) {
+            if (valor == valorBuscado) {
+                encontrado = true;
+                break;
+            }
+        }
+
+        if (encontrado) {
+            System.out.println("O valor " + valorBuscado + " está presente no array.");
+        } else {
+            System.out.println("O valor " + valorBuscado + " não está presente no array.");
+        }
+
+        sc.close();
+    }
+}
+
+
+
+
