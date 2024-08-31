@@ -2,7 +2,7 @@ Atividade 1
 
 import java.util.Scanner;
 
-public class atividadeA {
+public class atividadeA1 {
     public static void main(String[] args) {
        
         int[] array = {50, 100, 350};
@@ -28,7 +28,7 @@ Atividade 2
 
 import java.util.Arrays;
 
-public class atividadeA1 {
+public class atividadeA2 {
     public static void main(String[] args) {
 
         int[] array = {1, 2, 3, 4, 5};
@@ -57,7 +57,7 @@ public class atividadeA1 {
 
 Atividade 3
 
-public class atividadeA2 {
+public class atividadeA3 {
     public static void main(String[] args) {
         
         float[] array = {1.5f, 10.5f, 5.7f, 20.2f};
@@ -83,7 +83,7 @@ Atividade 4
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class atividadeA3 {
+public class atividadeA4 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -128,7 +128,7 @@ Atividade 5
 
 import java.util.Scanner;
 
-public class atividadeA4 {
+public class atividadeA5 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -167,7 +167,7 @@ Atividade 6
 
 import java.util.Scanner;
 
-public class AtividadeA5 {
+public class AtividadeA6 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -203,6 +203,520 @@ public class AtividadeA5 {
         sc.close();
     }
 }
+
+///////////////////////////////////////////////////////////////////////
+
+Atividade 7
+
+import java.util.Scanner;
+import java.util.HashSet;
+
+public class AtividadeA7 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int[] array = new int[5];
+        HashSet<Integer> set = new HashSet<>();
+        
+        System.out.println("Informe um número inteiro:");
+        int number = scanner.nextInt();
+        
+        boolean added = false;
+        for (int i = 0; i < array.length; i++) {
+            if (!set.contains(array[i])) {
+                array[i] = number;
+                set.add(number);
+                added = true;
+                break;
+            }
+        }
+        
+        if (!added) {
+            System.out.println("O array já está cheio.");
+        }
+
+        // Imprimindo o array resultante
+        System.out.print("Array resultante: ");
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+    }
+}
+
+///////////////////////////////////////////////////////////////////////
+
+Atividade 8
+
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class AtividadeA8 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String[] array = new String[8];
+        // Preenchendo o array com valores de exemplo
+        System.out.println("Preencha o array com 8 strings:");
+        for (int i = 0; i < array.length; i++) {
+            array[i] = scanner.nextLine();
+        }
+
+        System.out.println("Informe o valor para remover:");
+        String valueToRemove = scanner.nextLine();
+
+        ArrayList<String> resultList = new ArrayList<>();
+        for (String str : array) {
+            if (!str.equals(valueToRemove)) {
+                resultList.add(str);
+            }
+        }
+
+        // Convertendo a lista de volta para um array
+        String[] resultArray = resultList.toArray(new String[0]);
+
+        // Imprimindo o array resultante
+        System.out.print("Array resultante: ");
+        for (String str : resultArray) {
+            System.out.print(str + " ");
+        }
+    }
+}
+
+///////////////////////////////////////////////////////////////////////
+
+Atividade 9
+
+
+import java.util.Scanner;
+
+public class AtividadeA9 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        float[] array = new float[6];
+
+        System.out.println("Informe um número para preencher o array:");
+        float number = scanner.nextFloat();
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = number;
+        }
+
+        // Imprimindo o array resultante
+        System.out.print("Array resultante: ");
+        for (float num : array) {
+            System.out.print(num + " ");
+        }
+    }
+}
+
+///////////////////////////////////////////////////////////////////////
+
+Atividade 10
+
+import java.util.Scanner;
+
+public class AtividadeA10 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int[] array = new int[10];
+
+        System.out.println("Preencha o array com 10 inteiros:");
+        for (int i = 0; i < array.length; i++) {
+            array[i] = scanner.nextInt();
+        }
+
+        int min = array[0];
+        int max = array[0];
+
+        for (int num : array) {
+            if (num < min) {
+                min = num;
+            }
+            if (num > max) {
+                max = num;
+            }
+        }
+
+        System.out.println("Valor mínimo: " + min);
+        System.out.println("Valor máximo: " + max);
+    }
+}
+
+
+///////////////////////////////////////////////////////////////////////
+
+
+Atividade 11
+
+import java.util.Scanner;
+
+public class AtividadeA11 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int[][] matrix = new int[2][3];
+        
+        // Preenchendo a matriz com valores de exemplo
+        System.out.println("Preencha a matriz 2x3 com valores inteiros:");
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 3; j++) {
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+
+        System.out.println("Informe o índice da linha:");
+        int row = scanner.nextInt();
+
+        System.out.println("Informe o índice da coluna:");
+        int col = scanner.nextInt();
+
+        if (row >= 0 && row < 2 && col >= 0 && col < 3) {
+            System.out.println("Valor na posição [" + row + "][" + col + "] é: " + matrix[row][col]);
+        } else {
+            System.out.println("Índices inválidos.");
+        }
+    }
+}
+
+
+///////////////////////////////////////////////////////////////////////
+
+
+Atividade 12
+
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class AtividadeA12 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int[] array = new int[5];
+        System.out.println("Preencha o array com 5 inteiros:");
+        for (int i = 0; i < array.length; i++) {
+            array[i] = scanner.nextInt();
+        }
+
+        ArrayList<Integer> multiplesOfThree = new ArrayList<>();
+        for (int num : array) {
+            if (num % 3 == 0) {
+                multiplesOfThree.add(num);
+            }
+        }
+
+        // Convertendo a lista de volta para um array
+        int[] resultArray = multiplesOfThree.stream().mapToInt(i -> i).toArray();
+
+        // Imprimindo o array resultante
+        System.out.print("Novo Array com múltiplos de 3: ");
+        for (int num : resultArray) {
+            System.out.print(num + " ");
+        }
+    }
+
+
+///////////////////////////////////////////////////////////////////////
+
+Atividade 13
+
+
+import java.util.Scanner;
+
+public class AtividadeA13 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int[] array = new int[7];
+
+        System.out.println("Informe um número para adicionar ao primeiro e ao último elemento do Array:");
+        int num = scanner.nextInt();
+
+        // Preenchendo o array com valores de exemplo
+        System.out.println("Informe 7 valores para o Array:");
+        for (int i = 0; i < array.length; i++) {
+            array[i] = scanner.nextInt();
+        }
+
+        // Adicionando o valor informado ao primeiro e ao último elemento
+        array[0] += num;
+        array[array.length - 1] += num;
+
+        // Imprimindo o Array resultante
+        System.out.println("Array resultante:");
+        for (int value : array) {
+            System.out.print(value + " ");
+        }
+    }
+}
+
+///////////////////////////////////////////////////////////////////////
+
+Atividade 14
+
+import java.util.Scanner;
+
+public class AtividadeA14 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int[] array = new int[8];
+
+        System.out.println("Informe 8 valores para o Array:");
+        for (int i = 0; i < array.length; i++) {
+            array[i] = scanner.nextInt();
+        }
+
+        System.out.println("Informe dois índices para trocar de posição:");
+        int index1 = scanner.nextInt();
+        int index2 = scanner.nextInt();
+
+        // Troca dos elementos
+        int temp = array[index1];
+        array[index1] = array[index2];
+        array[index2] = temp;
+
+        // Imprimindo o Array resultante
+        System.out.println("Array resultante:");
+        for (int value : array) {
+            System.out.print(value + " ");
+        }
+    }
+}
+
+///////////////////////////////////////////////////////////////////////
+
+Atividade 15
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class AtividadeA15 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        float[] array = new float[10];
+        ArrayList<Float> result = new ArrayList<>();
+
+        System.out.println("Informe 10 valores para o Array:");
+        for (int i = 0; i < array.length; i++) {
+            array[i] = scanner.nextFloat();
+        }
+
+        // Adicionando elementos maiores que 5 ao novo Array
+        for (float value : array) {
+            if (value > 5) {
+                result.add(value);
+            }
+        }
+
+        // Imprimindo o novo Array
+        System.out.println("Novo Array com elementos maiores que 5:");
+        for (float value : result) {
+            System.out.print(value + " ");
+        }
+    }
+}
+
+///////////////////////////////////////////////////////////////////////
+
+Atividade 16
+
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class AtividadeA16 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int[] array = new int[10];
+        ArrayList<Integer> result = new ArrayList<>();
+
+        System.out.println("Informe 10 valores para o Array:");
+        for (int i = 0; i < array.length; i++) {
+            array[i] = scanner.nextInt();
+        }
+
+        // Adicionando elementos pares ao novo Array
+        for (int value : array) {
+            if (value % 2 == 0) {
+                result.add(value);
+            }
+        }
+
+        // Imprimindo o novo Array
+        System.out.println("Novo Array com elementos pares:");
+        for (int value : result) {
+            System.out.print(value + " ");
+        }
+    }
+}
+
+///////////////////////////////////////////////////////////////////////
+
+Atividade 17
+
+
+import java.util.Scanner;
+
+public class AtividadeA17 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int[] array = new int[10];
+        int sum = 0;
+
+        System.out.println("Informe 10 valores para o Array:");
+        for (int i = 0; i < array.length; i++) {
+            array[i] = scanner.nextInt();
+        }
+
+        // Calculando a soma dos elementos nas posições pares
+        for (int i = 0; i < array.length; i += 2) {
+            sum += array[i];
+        }
+
+        // Imprimindo a soma
+        System.out.println("Soma dos elementos nas posições pares: " + sum);
+    }
+}
+
+///////////////////////////////////////////////////////////////////////
+
+Atividade 18
+
+
+import java.util.Scanner;
+
+public class AtividadeA18 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Informe um número inteiro positivo n:");
+        int n = scanner.nextInt();
+
+        int[] primes = new int[n];
+        int count = 0;
+        int number = 2; // Primeiro número primo
+
+        while (count < n) {
+            if (isPrime(number)) {
+                primes[count] = number;
+                count++;
+            }
+            number++;
+        }
+
+        // Imprimindo o Array de números primos
+        System.out.println("Os primeiros " + n + " números primos são:");
+        for (int prime : primes) {
+            System.out.print(prime + " ");
+        }
+    }
+
+    private static boolean isPrime(int num) {
+        if (num <= 1) return false;
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) return false;
+        }
+        return true;
+    }
+}
+
+///////////////////////////////////////////////////////////////////////
+
+Atividade 19
+
+
+import java.util.Scanner;
+
+public class AtividadeA19 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Informe o tamanho dos Arrays:");
+        int n = scanner.nextInt();
+
+        int[] array1 = new int[n];
+        int[] array2 = new int[n];
+        int[] sumArray = new int[n];
+
+        System.out.println("Informe os valores para o primeiro Array:");
+        for (int i = 0; i < n; i++) {
+            array1[i] = scanner.nextInt();
+        }
+
+        System.out.println("Informe os valores para o segundo Array:");
+        for (int i = 0; i < n; i++) {
+            array2[i] = scanner.nextInt();
+        }
+
+        // Calculando a soma dos dois Arrays
+        for (int i = 0; i < n; i++) {
+            sumArray[i] = array1[i] + array2[i];
+        }
+
+        // Imprimindo o Array de soma
+        System.out.println("Array resultante da soma dos dois Arrays:");
+        for (int value : sumArray) {
+            System.out.print(value + " ");
+        }
+    }
+}
+
+///////////////////////////////////////////////////////////////////////
+
+Atividade 20
+
+
+import java.util.Scanner;
+
+public class AtividadeA20 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int[] array = new int[10];
+        boolean isSorted = true;
+
+        System.out.println("Informe 10 valores para o Array:");
+        for (int i = 0; i < array.length; i++) {
+            array[i] = scanner.nextInt();
+        }
+
+        // Verificando se o Array está ordenado em ordem crescente
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] > array[i + 1]) {
+                isSorted = false;
+                break;
+            }
+        }
+
+        // Imprimindo o resultado da verificação
+        if (isSorted) {
+            System.out.println("O Array está ordenado em ordem crescente.");
+        } else {
+            System.out.println("O Array não está ordenado em ordem crescente.");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
