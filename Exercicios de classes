@@ -1,0 +1,273 @@
+Exercicio 1 - Classes e Encapsulamento
+
+public class Carro {
+    
+    private String marca;
+    private String modelo;
+    private int ano;
+
+    
+    public Carro(String marca, String modelo, int ano) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+    }
+
+   
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
+
+    
+    public String getMarca() {
+        return marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public int getAno() {
+        return ano;
+    }
+
+   
+    public void exibirDescricao() {
+        System.out.println("Carro: " + marca + " " + modelo + ", Ano: " + ano);
+    }
+
+    public static void main(String[] args) {
+        
+        Carro meuCarro = new Carro("Toyota", "Corolla", 2022);
+        
+        
+        meuCarro.exibirDescricao();
+
+        
+        meuCarro.setMarca("Honda");
+        meuCarro.setModelo("Civic");
+        meuCarro.setAno(2021);
+
+        
+        meuCarro.exibirDescricao();
+    }
+}
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Exercício 2 - Herança Simples
+
+
+public class Animal {
+    
+    public void fazerSom() {
+        System.out.println("O animal faz um som.");
+    }
+}
+
+
+class Cachorro extends Animal {
+    
+    @Override
+    public void fazerSom() {
+        System.out.println("Latido");
+    }
+}
+
+
+class Gato extends Animal {
+    
+    @Override
+    public void fazerSom() {
+        System.out.println("Miau");
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        
+        Animal cachorro = new Cachorro();
+        Animal gato = new Gato();
+
+        
+        cachorro.fazerSom();  
+        gato.fazerSom();      
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Exercício 3: Herança e Polimorfismo
+
+
+public class Funcionario {
+    
+    protected String nome;
+    protected double salario;
+
+   
+    public Funcionario(String nome, double salario) {
+        this.nome = nome;
+        this.salario = salario;
+    }
+
+    
+    public double calcularBonificacao() {
+        return salario * 0.10;
+    }
+
+    
+    public void exibirInformacoes() {
+        System.out.println("Nome: " + nome + ", Salário: " + salario + ", Bonificação: " + calcularBonificacao());
+    }
+}
+
+
+class Gerente extends Funcionario {
+
+    
+    public Gerente(String nome, double salario) {
+        super(nome, salario);
+    }
+
+    
+    @Override
+    public double calcularBonificacao() {
+        return salario * 0.20;
+    }
+}
+
+
+class Desenvolvedor extends Funcionario {
+
+    
+    public Desenvolvedor(String nome, double salario) {
+        super(nome, salario);
+    }
+
+    
+    @Override
+    public double calcularBonificacao() {
+        return salario * 0.15;
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        
+        Funcionario gerente = new Gerente("João", 5000);
+        Funcionario desenvolvedor = new Desenvolvedor("Maria", 4000);
+
+        
+        gerente.exibirInformacoes();      
+        desenvolvedor.exibirInformacoes(); 
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Exercício 4: Composição e Encapsulamento
+
+public class Endereco {
+   
+    private String rua;
+    private int numero;
+    private String cidade;
+
+    
+    public Endereco(String rua, int numero, String cidade) {
+        this.rua = rua;
+        this.numero = numero;
+        this.cidade = cidade;
+    }
+
+    
+    public String getRua() {
+        return rua;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    
+    public String getEnderecoCompleto() {
+        return rua + " " + numero + ", " + cidade;
+    }
+}
+
+
+public class Pessoa {
+    
+    private String nome;
+    private Endereco endereco; 
+
+    
+    public Pessoa(String nome, Endereco endereco) {
+        this.nome = nome;
+        this.endereco = endereco;
+    }
+
+    
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getEnderecoCompleto() {
+        return endereco.getEnderecoCompleto();
+    }
+
+    
+    public void exibirInformacoes() {
+        System.out.println("Nome: " + nome + ", Endereço: " + getEnderecoCompleto());
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        
+        Endereco endereco = new Endereco("Rua das Flores", 123, "São Paulo");
+
+        
+        Pessoa pessoa = new Pessoa("Ana", endereco);
+
+        
+        pessoa.exibirInformacoes();
+
+        
+        Endereco novoEndereco = new Endereco("Avenida Paulista", 456, "São Paulo");
+        pessoa.setEndereco(novoEndereco);
+
+        
+        pessoa.exibirInformacoes();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
